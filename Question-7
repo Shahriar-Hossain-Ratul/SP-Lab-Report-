@@ -1,0 +1,20 @@
+/*Develop a C program that calculates the sum of digits of a non-negative
+integer entered by the user. The sum of digits is obtained by adding up all
+the individual digits of the number. For example, the sum of digits of 123 is
+calculated as 1 + 2 + 3 = 6.*/
+
+#include <stdio.h>
+int main() {
+    int num, sum = 0;
+
+    printf("Enter a non-negative integer: ");
+    scanf("%d", &num);
+
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    printf("The sum of digits is %d",sum);
+
+    return 0;
+}
