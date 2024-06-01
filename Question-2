@@ -1,0 +1,48 @@
+/*Develop a C program that calculates the area of different geometric shapes
+such as circle, rectangle, and triangle. Prompt the user to choose a shape,
+input the required parameters (like radius for circle, length and width for
+rectangle, base and height for triangle), then calculate and display the area.
+You can use the following formulas:
+● Circle: 𝐴𝑟𝑒𝑎 = π * 𝑟𝑎𝑑𝑖𝑢𝑠²
+● Rectangle: 𝐴𝑟𝑒𝑎 = 𝑙𝑒𝑛𝑔𝑡ℎ * 𝑤𝑖𝑑𝑡ℎ
+● Triangle: 𝐴𝑟𝑒𝑎 =½* 𝑏𝑎𝑠𝑒 * ℎ𝑒𝑖𝑔ℎ𝑡*/
+
+#include <stdio.h>
+
+int main() {
+    int choice;
+    float radius, length, width, base, height, area;
+
+    printf("Choose a shape to calculate the area:\n");
+    printf("1. Circle\n");
+    printf("2. Rectangle\n");
+    printf("3. Triangle\n");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Enter the radius of the circle: ");
+            scanf("%f", &radius);
+            area = 3.14159* radius * radius;
+            printf("The area of the circle is: %f\n", area);
+            break;
+        case 2:
+            printf("Enter the length of rectangle: ");
+            scanf("%f", &length);
+            printf("Enter the width of rectangle: ");
+            scanf("%f", &width);
+            area = length * width;
+            printf("The area of the rectangle is: %.2f\n", area);
+            break;
+        case 3:
+            printf("Enter the base of triangle: ");
+            scanf("%f", &base);
+            printf("Enter the height of triangle: ");
+            scanf("%f", &height);
+            area = 0.5 * base * height;
+            printf("The area of  triangle is: %.2f\n", area);
+            break;
+        default:
+            printf("Invalid choice\n");
+            break;
+    }
