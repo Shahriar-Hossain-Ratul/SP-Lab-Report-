@@ -1,0 +1,32 @@
+/*Create a C program that sorts an array of integers entered by the user using 
+the bubble sort algorithm and displays the sorted array. Bubble sort is a 
+simple sorting algorithm that repeatedly steps through the list, compares 
+adjacent elements, and swaps them if they are in the wrong order.*/
+
+#include <stdio.h>
+int main() {
+    int arr[100], size, i, j;
+
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    printf("Enter the elements of the array: ");
+    for (i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+    for (i = 0; i < size - 1; i++) {
+        for (j = 0; j < size - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    printf("Sorted array: ");
+    for (i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
